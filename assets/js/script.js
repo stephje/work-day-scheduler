@@ -2,16 +2,16 @@
 var now = moment();
 $('#currentDay').text(now.format('dddd Do MMMM, YYYY HH:mm'));
 
-// var currentTime = now.format('H')
-var currentTime = 9;
+var currentTime = parseInt(now.format('H'));
 
 $(document).ready(function(){
 
     for (let i = 9; i <= 17; i++) {
         if (i === currentTime) {
-            $(`#${i}-input`).css("background-color","red");
+            console.log("This is i", i)
+            $('#' + i).css("background-color", "#eaaec1");
         } else if (i > currentTime) {
-            $(`#${i}-input`).css("background-color","green");
+            $('#' + i).css("background-color", "#97d8a1");
         } 
     }
 

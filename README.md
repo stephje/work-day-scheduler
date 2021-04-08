@@ -1,5 +1,10 @@
 # work-day-scheduler
 
+## Project Outline
+
+A simple calendar application that allows a user to save events for each hour of the day. Runs in a browser and features dynamically updated HTML and CSS powered by jQuery.
+
+
 ## Acceptance Criteria
 
 ```md
@@ -17,3 +22,16 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+
+## Design Notes
+
+* Bootstrap used for styling
+
+
+## Link to Deployed Application
+
+https://stephje.github.io/work-day-scheduler/
+
+## Screenshots of Deployed Application
+
+![Deployed Website](./assets/images/scheduler-browser.png)

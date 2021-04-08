@@ -24,7 +24,9 @@ $(document).ready(function(){
             $('#' + i).css("background-color", "#eaaec1");
         } else if (i > currentTime) {
             $('#' + i).css("background-color", "#97d8a1");
-        } 
+        } else {
+            $('#' + i).css("background-color", "#f3f5f7");
+        }
     }
 
 });
@@ -33,7 +35,7 @@ $(document).ready(function(){
 //if you create an empty array without specifying the length, splice doesn't work properly
 var schedule = new Array(9);
 
-//when a save button is clicked, append 
+//when a save button is clicked, append
 $("button").click(function() {
 
     getSchedule();
@@ -48,7 +50,7 @@ $("button").click(function() {
     //idOfUserEntry is a string, so use parseInt to convert it to a number
     var scheduleItem = {
         time: parseInt(idOfUserEntry),
-        entry: userEntry 
+        entry: userEntry
     }
 
     //splice the created into the array called schedule at the specific index
@@ -60,18 +62,25 @@ $("button").click(function() {
 
 });
 
+//If there is a schedule in local storage, get it and parse it into a javascript object
 function getSchedule() {
     var storedSchedule = localStorage.getItem("schedule");
-    if (storedSchedule !== null) {
-    schedule = JSON.parse(storedSchedule);
+    if (storedSchedule) {
+        schedule = JSON.parse(storedSchedule);
     }
 }
 
+//Display the schedule on the page
 function displaySchedule() {
     getSchedule();
-    console.log(schedule);
     for (let i = 0; i < schedule.length; i++) {
         var scheduleItem = schedule[i];
-        console.log(scheduleItem);
+        var textArea = $('#' + (i + 9));
+        if (scheduleItem) {
+            var x = scheduleItem.entry;
+            textArea.val(x)
+        }
     }
 }
+
+

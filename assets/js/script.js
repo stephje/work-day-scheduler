@@ -23,11 +23,10 @@ function displayDateAndTime(){
     $('#currentDay').text(now.format('dddd Do MMMM, YYYY HH:mm a'));
 }
 
-//now.format('H') is a string. Use parseInt to convert to a number
-var currentTime = parseInt(now.format('H'));
-
 //set colour to pink for the current timeslot and green for timeslots in the future
 function setColours() {
+    //now.format('H') is a string. Use parseInt to convert to a number
+    var currentTime = parseInt(now.format('H'));
     for (let i = 9; i <= 17; i++) {
         if (i === currentTime) {
             $('#' + i).css("background-color", "#eaaec1");

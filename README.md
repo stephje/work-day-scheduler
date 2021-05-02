@@ -2,7 +2,7 @@
 
 ## Project Outline
 
-A simple calendar application that allows a user to save events for each hour of the day. Runs in a browser and features dynamically updated HTML and CSS powered by jQuery.
+A simple calendar application that allows users to save events for each hour of the day. Runs in a browser and features dynamically updated HTML and CSS powered by jQuery.
 
 
 ## Acceptance Criteria
